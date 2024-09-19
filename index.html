@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+
+<body>
+    <div class="tela">
+        <div class="hero">
+            <form action="">
+                <label>Valor</label>
+                <input type="text" id="valor-input" placeholder="R$"><br>
+                <input type="radio" class="select" id="pix-input" name="opcoes-pag" value="pix">  
+                <label for="pix-input">Pix</label>
+                <input type="radio" class="select" id="cartão-credito" name="opcoes-pag" value="cartão-credito">  
+                <label for="cartão-credito">Cartão de Crédito</label><br>
+                <button class="btn-inf" id="btn-inf">Informar dados</button>
+            </form>
+        </div>
+        <div id="pix" class="pix">
+            <h2>PIX</h2>
+            <label>CPF</label>
+            <input type="text">
+        </div>
+        <div id="credito" class="credito">
+            <form>
+                <h2>Cartão de Credito</h2>
+                <label>Número</label>
+                <input class="input-numero" type="text" id="cardNumber" oninput="checkCardNumber()">
+                <img id="cardImage" src="" alt="Bandeira do cartão" style="display: none; width: 30px;"><br>
+                <span id="cardInvalid" style="display: none; color: red;">Número de cartão inválido<br></span>
+                <label>Titular</label>
+                <input class="input-titulo" type="text"><br>
+                <label>Cód. Segurança</label>
+                <input class="input-codigo-seg" type="text"><br>
+                <label>Vencimento</label>
+                <input class="input-vencimento" type="text"><br>
+                <label>Parcelas</label>
+                <select class="parcelas" name="parcelas" id="parcelas">
+                    <option value="1-parcela">1 parcela</option>
+                    <option value="2-parcela">2 parcela</option>
+                    <option value="3-parcela">3 parcela</option>
+                    <option value="4-parcela">4 parcela</option>
+                    <option value="5-parcela">5 parcela</option>
+                </select><br>
+                <spam class="valor" id="1-vezes">1x R$0,00</spam>
+                <spam class="valor" id="2-vezes">2x R$0,00</spam>
+                <spam class="valor" id="3-vezes">3x R$0,00</spam><br>
+                <spam class="valor" id="4-vezes">4x R$0,00</spam>
+                <spam class="valor" id="5-vezes">5x R$0,00</spam>
+
+            </form>
+        </div>
+        <div class="valor-final">
+            <span class="total">Total:</span>
+            <spam class="valor-total">R$0,00</spam>
+        </div>
+        
+        <br>
+        <button class="btn-pag" id="btn-Pagar" onclick="showSuccessMessage()">Pagar</button>
+        <div id="successMessage">Pagamento realizado com sucesso!</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
